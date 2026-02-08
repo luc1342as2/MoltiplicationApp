@@ -1,0 +1,205 @@
+/* Calculator — Professional & Interactive */
+
+:root {
+    --bg: #0f0f12;
+    --surface: #18181c;
+    --surface-hover: #222228;
+    --border: #2a2a32;
+    --text: #e8e8ec;
+    --text-muted: #8888a0;
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+    --accent-glow: rgba(99, 102, 241, 0.35);
+    --op: #a78bfa;
+    --eq: #22c55e;
+    --eq-hover: #4ade80;
+    --fn: #64748b;
+    --danger: #ef4444;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --transition: 0.15s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+    font-family: 'Outfit', system-ui, sans-serif;
+    color: var(--text);
+    padding: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.calculator {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 320px;
+}
+
+.display {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    min-height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.expression {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    min-height: 1.25em;
+    word-break: break-all;
+    text-align: right;
+    width: 100%;
+}
+
+.result {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+    word-break: break-all;
+    text-align: right;
+    width: 100%;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem;
+    cursor: pointer;
+    background: var(--surface-hover);
+    color: var(--text);
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.btn:hover {
+    background: #2a2a32;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Number keys */
+.btn.num {
+    background: var(--surface-hover);
+    font-size: 1.1rem;
+}
+
+.btn.num:hover {
+    background: #2e2e36;
+    box-shadow: 0 0 0 1px var(--border);
+}
+
+/* Operators */
+.btn.op {
+    background: #252530;
+    color: var(--op);
+}
+
+.btn.op:hover {
+    background: #2e2e3a;
+    color: #c4b5fd;
+}
+
+/* Equals */
+.btn.eq {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.btn.eq:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.btn.eq:active {
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Function keys (MC, MR, %, √, etc.) */
+.btn.fn {
+    background: #1e1e24;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.btn.fn:hover {
+    background: #282830;
+    color: var(--text);
+}
+
+/* Clear / CE */
+.btn[data-action="clear"],
+.btn[data-action="ce"],
+.btn[data-action="backspace"] {
+    color: #f87171;
+}
+
+.btn[data-action="clear"]:hover,
+.btn[data-action="ce"]:hover,
+.btn[data-action="backspace"]:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+}
+
+/* Span 2 for zero if we want; currently 0 is single cell */
+.footer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 360px) {
+    .calculator {
+        padding: 1rem;
+    }
+    .btn {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+    .result {
+        font-size: 1.5rem;
+    }
+}

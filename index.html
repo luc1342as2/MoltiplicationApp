@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator — Lucas Ghigli</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <main class="calculator">
+            <div class="display">
+                <div class="expression" id="expression" aria-live="polite"></div>
+                <div class="result" id="result">0</div>
+            </div>
+            <div class="keypad">
+                <button type="button" class="btn fn" data-action="mc" title="Memory Clear">MC</button>
+                <button type="button" class="btn fn" data-action="mr" title="Memory Recall">MR</button>
+                <button type="button" class="btn fn" data-action="m+" title="Memory Add">M+</button>
+                <button type="button" class="btn fn" data-action="m-" title="Memory Subtract">M−</button>
+                <button type="button" class="btn op" data-action="clear" title="Clear">C</button>
+                <button type="button" class="btn op" data-action="ce" title="Clear Entry">CE</button>
+                <button type="button" class="btn op" data-action="backspace" title="Backspace">⌫</button>
+                <button type="button" class="btn op" data-action="÷">÷</button>
+                <button type="button" class="btn num" data-value="7">7</button>
+                <button type="button" class="btn num" data-value="8">8</button>
+                <button type="button" class="btn num" data-value="9">9</button>
+                <button type="button" class="btn op" data-action="×">×</button>
+                <button type="button" class="btn num" data-value="4">4</button>
+                <button type="button" class="btn num" data-value="5">5</button>
+                <button type="button" class="btn num" data-value="6">6</button>
+                <button type="button" class="btn op" data-action="-">−</button>
+                <button type="button" class="btn num" data-value="1">1</button>
+                <button type="button" class="btn num" data-value="2">2</button>
+                <button type="button" class="btn num" data-value="3">3</button>
+                <button type="button" class="btn op" data-action="+">+</button>
+                <button type="button" class="btn num" data-value="0">0</button>
+                <button type="button" class="btn num" data-action="decimal">.</button>
+                <button type="button" class="btn op" data-action="±">±</button>
+                <button type="button" class="btn eq" data-action="=">=</button>
+                <button type="button" class="btn fn" data-action="%" title="Percent">%</button>
+                <button type="button" class="btn fn" data-action="sqrt" title="Square root">√</button>
+                <button type="button" class="btn fn" data-action="sq" title="Square">x²</button>
+                <button type="button" class="btn fn" data-action="recip" title="Reciprocal">1/x</button>
+            </div>
+        </main>
+        <footer class="footer">© 2023 Lucas Ghigli</footer>
+    </div>
+    <script src="javascript.js"></script>
+</body>
+</html>
