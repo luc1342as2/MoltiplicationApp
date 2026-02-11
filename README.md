@@ -1,5 +1,5 @@
 🎉 Welcome to Calculator_1! 🧮✨
-A playful and interactive multiplication learning app built with HTML, CSS & JavaScript – perfect for sharpening your math skills or sharing a simple yet joyful coding project!
+A playful and interactive calculator app built with HTML, CSS & JavaScript – perfect for sharpening your math skills or sharing a simple yet joyful coding project!
 
 🌟 What’s inside?
 ✔️ Clean and friendly UI for learning multiplication
